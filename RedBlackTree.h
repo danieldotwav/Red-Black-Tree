@@ -5,6 +5,16 @@ enum Color { RED, BLACK };
 
 class RedBlackTree {
 private:
+	struct RedBlackNode {
+		int data;
+		bool color;
+		RedBlackNode* left;
+		RedBlackNode* right;
+		RedBlackNode* parent;
+
+		RedBlackNode(int data) : data(data), color(RED), left(nullptr), right(nullptr), parent(nullptr) {}
+	};
+
 	RedBlackNode* root;
 
 	void rotateLeft(RedBlackNode*& node);
@@ -23,14 +33,6 @@ public:
 	void preorder();
 };
 
-struct RedBlackNode {
-	int data;
-	bool color;
-	RedBlackNode* left;
-	RedBlackNode* right;
-	RedBlackNode* parent;
 
-	RedBlackNode(int data) : data(data), color(RED), left(nullptr), right(nullptr), parent(nullptr) {}
-};
 
 #endif
